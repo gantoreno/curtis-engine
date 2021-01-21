@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
--   Remove Python 3.5 from test environments
+-   Remove Python 3.5 from test environments.
 
 ### Fixed
 
