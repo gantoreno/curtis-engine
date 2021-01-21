@@ -1,6 +1,6 @@
 # Curtis: The Cardiovascular Unified Real-Time Intelligent System
 
-![Python package](https://github.com/gantoreno/curtis-engine/workflows/Python%20package/badge.svg)
+![Python package](https://github.com/gantoreno/curtis-engine/workflows/Python%20package/badge.svg) ![Python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue)
 
 Curtis is a system whose purpose is to analyze cardiovascular health of a given person, this is done through ECG analysis (an existent ECG measuring system is needed to obtain the required values).
 
