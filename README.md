@@ -54,7 +54,7 @@ The `curtis.diagnose` method returns a number (as seen). This number is a _diagn
 
 ```python
 >>> from curtis.utils.encoding import diagnosis_indexes
->>> print(diagnosis_indexes[diagnostic])
+>>> print(diagnosis_indexes[diagnosis])
 Unifocal premature ventricular complexes
 ```
 
