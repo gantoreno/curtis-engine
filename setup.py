@@ -18,7 +18,6 @@ setup(
         "Operating System :: OS Independent",
     ],
     include_package_data=True,
-    install_requires=['scikit-learn==0.23.2'],
     python_requires='>=3.5',
     packages=find_packages()
 )
