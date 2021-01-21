@@ -28,7 +28,7 @@
 </summary>
 <pre><code class="python">import os
 import pickle
-from .fact import CurtisFact
+from .facts import CurtisFacts
 from .exceptions import CurtisIntegrityError
 
 
@@ -37,8 +37,8 @@ class CurtisEngine:
     The Curtis engine
 
     This class will act as the inference engine of an expert system, in which an initial
-    fact must be declared in order for curtis to run and perform a diagnosis. This fact
-    must be passed as a `CurtisFact` object, that contains automatic validation for each
+    facts lists must be declared in order for curtis to run and perform a diagnosis. This facts
+    must be passed as a `CurtisFacts` object, that contains automatic validation for each
     expected field.
     &#34;&#34;&#34;
 
@@ -59,29 +59,29 @@ class CurtisEngine:
             raise CurtisIntegrityError(
                 &#34;The curtis model file appears to be missing/corrupted&#34;)
 
-    def declare_fact(self, fact: CurtisFact):
+    def declare_facts(self, facts: CurtisFacts):
         &#34;&#34;&#34;
-        Fact declaration
+        Facts declaration
 
-        To declare a fact, a `CurtisFact` must be passed in order for the engine
-        to store it, the `CurtisFact` automatically performs validation to each 
+        To declare a set of facts, a `CurtisFacts` object must be passed in order for the engine
+        to store it, the `CurtisFacts` object automatically performs validation to each 
         field, making sure no value is going to affect the decision/diagnosis.
 
         Parameters
         ----------
-        :param fact: The general fact containing a patient&#39;s ECG values
+        :param facts: The general facts that contain a patient&#39;s ECG values
 
         Returns
         -------
         :return: None
         &#34;&#34;&#34;
-        self.fact = fact
+        self.facts = facts
 
     def diagnose(self):
         &#34;&#34;&#34;
         Perform a diagnostic.
 
-        After a fact is declared, the engine now performs a diagnostic over the
+        After facts are declared, the engine now performs a diagnostic over the
         provided values, which get passed to the inner&#39;s decision-making module
         and returns a diagnostic index. The returned diagnostic index must be
         passed to the `utils.encoding.diagnosis_indexes` dictionary as a key
@@ -93,16 +93,16 @@ class CurtisEngine:
         &#34;&#34;&#34;
         diagnosis = self.engine.predict([
             [
-                self.fact.sex,
-                self.fact.age,
-                self.fact.height,
-                self.fact.weight,
-                self.fact.HR,
-                self.fact.Pd,
-                self.fact.PQ,
-                self.fact.QRS,
-                self.fact.QT,
-                self.fact.QTcFra
+                self.facts.sex,
+                self.facts.age,
+                self.facts.height,
+                self.facts.weight,
+                self.facts.HR,
+                self.facts.Pd,
+                self.facts.PQ,
+                self.facts.QRS,
+                self.facts.QT,
+                self.facts.QTcFra
             ]
         ])
 
@@ -124,8 +124,8 @@ class CurtisEngine:
 <dd>
 <div class="desc"><p>The Curtis engine</p>
 <p>This class will act as the inference engine of an expert system, in which an initial
-fact must be declared in order for curtis to run and perform a diagnosis. This fact
-must be passed as a <code>CurtisFact</code> object, that contains automatic validation for each
+facts lists must be declared in order for curtis to run and perform a diagnosis. This facts
+must be passed as a <code>CurtisFacts</code> object, that contains automatic validation for each
 expected field.</p>
 <p>Engine constructor</p>
 <p>When instantiating a <code><a title="curtis.engine.CurtisEngine" href="#curtis.engine.CurtisEngine">CurtisEngine</a></code> object, the engine's model gets
@@ -140,8 +140,8 @@ all classification tasks are performed by the engine.</p></div>
     The Curtis engine
 
     This class will act as the inference engine of an expert system, in which an initial
-    fact must be declared in order for curtis to run and perform a diagnosis. This fact
-    must be passed as a `CurtisFact` object, that contains automatic validation for each
+    facts lists must be declared in order for curtis to run and perform a diagnosis. This facts
+    must be passed as a `CurtisFacts` object, that contains automatic validation for each
     expected field.
     &#34;&#34;&#34;
 
@@ -162,29 +162,29 @@ all classification tasks are performed by the engine.</p></div>
             raise CurtisIntegrityError(
                 &#34;The curtis model file appears to be missing/corrupted&#34;)
 
-    def declare_fact(self, fact: CurtisFact):
+    def declare_facts(self, facts: CurtisFacts):
         &#34;&#34;&#34;
-        Fact declaration
+        Facts declaration
 
-        To declare a fact, a `CurtisFact` must be passed in order for the engine
-        to store it, the `CurtisFact` automatically performs validation to each 
+        To declare a set of facts, a `CurtisFacts` object must be passed in order for the engine
+        to store it, the `CurtisFacts` object automatically performs validation to each 
         field, making sure no value is going to affect the decision/diagnosis.
 
         Parameters
         ----------
-        :param fact: The general fact containing a patient&#39;s ECG values
+        :param facts: The general facts that contain a patient&#39;s ECG values
 
         Returns
         -------
         :return: None
         &#34;&#34;&#34;
-        self.fact = fact
+        self.facts = facts
 
     def diagnose(self):
         &#34;&#34;&#34;
         Perform a diagnostic.
 
-        After a fact is declared, the engine now performs a diagnostic over the
+        After facts are declared, the engine now performs a diagnostic over the
         provided values, which get passed to the inner&#39;s decision-making module
         and returns a diagnostic index. The returned diagnostic index must be
         passed to the `utils.encoding.diagnosis_indexes` dictionary as a key
@@ -196,16 +196,16 @@ all classification tasks are performed by the engine.</p></div>
         &#34;&#34;&#34;
         diagnosis = self.engine.predict([
             [
-                self.fact.sex,
-                self.fact.age,
-                self.fact.height,
-                self.fact.weight,
-                self.fact.HR,
-                self.fact.Pd,
-                self.fact.PQ,
-                self.fact.QRS,
-                self.fact.QT,
-                self.fact.QTcFra
+                self.facts.sex,
+                self.facts.age,
+                self.facts.height,
+                self.facts.weight,
+                self.facts.HR,
+                self.facts.Pd,
+                self.facts.PQ,
+                self.facts.QRS,
+                self.facts.QT,
+                self.facts.QTcFra
             ]
         ])
 
@@ -213,39 +213,39 @@ all classification tasks are performed by the engine.</p></div>
 </details>
 <h3>Methods</h3>
 <dl>
-<dt id="curtis.engine.CurtisEngine.declare_fact"><code class="name flex">
-<span>def <span class="ident">declare_fact</span></span>(<span>self, fact: <a title="curtis.fact.CurtisFact" href="fact.html#curtis.fact.CurtisFact">CurtisFact</a>)</span>
+<dt id="curtis.engine.CurtisEngine.declare_facts"><code class="name flex">
+<span>def <span class="ident">declare_facts</span></span>(<span>self, facts: <a title="curtis.facts.CurtisFacts" href="facts.html#curtis.facts.CurtisFacts">CurtisFacts</a>)</span>
 </code></dt>
 <dd>
-<div class="desc"><p>Fact declaration</p>
-<p>To declare a fact, a <code>CurtisFact</code> must be passed in order for the engine
-to store it, the <code>CurtisFact</code> automatically performs validation to each
+<div class="desc"><p>Facts declaration</p>
+<p>To declare a set of facts, a <code>CurtisFacts</code> object must be passed in order for the engine
+to store it, the <code>CurtisFacts</code> object automatically performs validation to each
 field, making sure no value is going to affect the decision/diagnosis.</p>
 <h2 id="parameters">Parameters</h2>
-<p>:param fact: The general fact containing a patient's ECG values</p>
+<p>:param facts: The general facts that contain a patient's ECG values</p>
 <h2 id="returns">Returns</h2>
 <p>:return: None</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def declare_fact(self, fact: CurtisFact):
+<pre><code class="python">def declare_facts(self, facts: CurtisFacts):
     &#34;&#34;&#34;
-    Fact declaration
+    Facts declaration
 
-    To declare a fact, a `CurtisFact` must be passed in order for the engine
-    to store it, the `CurtisFact` automatically performs validation to each 
+    To declare a set of facts, a `CurtisFacts` object must be passed in order for the engine
+    to store it, the `CurtisFacts` object automatically performs validation to each 
     field, making sure no value is going to affect the decision/diagnosis.
 
     Parameters
     ----------
-    :param fact: The general fact containing a patient&#39;s ECG values
+    :param facts: The general facts that contain a patient&#39;s ECG values
 
     Returns
     -------
     :return: None
     &#34;&#34;&#34;
-    self.fact = fact</code></pre>
+    self.facts = facts</code></pre>
 </details>
 </dd>
 <dt id="curtis.engine.CurtisEngine.diagnose"><code class="name flex">
@@ -253,7 +253,7 @@ field, making sure no value is going to affect the decision/diagnosis.</p>
 </code></dt>
 <dd>
 <div class="desc"><p>Perform a diagnostic.</p>
-<p>After a fact is declared, the engine now performs a diagnostic over the
+<p>After facts are declared, the engine now performs a diagnostic over the
 provided values, which get passed to the inner's decision-making module
 and returns a diagnostic index. The returned diagnostic index must be
 passed to the <code>utils.encoding.diagnosis_indexes</code> dictionary as a key
@@ -268,7 +268,7 @@ in order to obtain the diagnostis' title.</p>
     &#34;&#34;&#34;
     Perform a diagnostic.
 
-    After a fact is declared, the engine now performs a diagnostic over the
+    After facts are declared, the engine now performs a diagnostic over the
     provided values, which get passed to the inner&#39;s decision-making module
     and returns a diagnostic index. The returned diagnostic index must be
     passed to the `utils.encoding.diagnosis_indexes` dictionary as a key
@@ -280,16 +280,16 @@ in order to obtain the diagnostis' title.</p>
     &#34;&#34;&#34;
     diagnosis = self.engine.predict([
         [
-            self.fact.sex,
-            self.fact.age,
-            self.fact.height,
-            self.fact.weight,
-            self.fact.HR,
-            self.fact.Pd,
-            self.fact.PQ,
-            self.fact.QRS,
-            self.fact.QT,
-            self.fact.QTcFra
+            self.facts.sex,
+            self.facts.age,
+            self.facts.height,
+            self.facts.weight,
+            self.facts.HR,
+            self.facts.Pd,
+            self.facts.PQ,
+            self.facts.QRS,
+            self.facts.QT,
+            self.facts.QTcFra
         ]
     ])
 
@@ -317,7 +317,7 @@ in order to obtain the diagnostis' title.</p>
 <li>
 <h4><code><a title="curtis.engine.CurtisEngine" href="#curtis.engine.CurtisEngine">CurtisEngine</a></code></h4>
 <ul class="">
-<li><code><a title="curtis.engine.CurtisEngine.declare_fact" href="#curtis.engine.CurtisEngine.declare_fact">declare_fact</a></code></li>
+<li><code><a title="curtis.engine.CurtisEngine.declare_facts" href="#curtis.engine.CurtisEngine.declare_facts">declare_facts</a></code></li>
 <li><code><a title="curtis.engine.CurtisEngine.diagnose" href="#curtis.engine.CurtisEngine.diagnose">diagnose</a></code></li>
 </ul>
 </li>
