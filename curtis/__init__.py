@@ -11,7 +11,7 @@ rules were obtained for Curtis using the "decision tree approach", in which
 some existent data was given to a decision tree classifier, and it categorized
 the data into branches of rules and decisions.
 """
-__version__ = '0.1.2'
+__version__ = '0.1.3'
 
 try:
     from .fact import CurtisFact
