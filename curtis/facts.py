@@ -2,18 +2,18 @@ from .exceptions import CurtisParameterError
 from .utils.validation import validation_bounds
 
 
-class CurtisFact:
+class CurtisFacts:
     """
-    Curtis fact
+    Curtis facts
 
     Represents the shape & data models of the Curtis engine. Instances of this class
-    get declared on the engine's `declare_fact` method in order to pass a patient's
+    get declared on the engine's `declare_facts` method in order to pass a patient's
     information to the system and perform a diagnosis.
     """
 
     def __init__(self, sex: int, age: int, height: float, weight: float, HR: float, Pd: float, PQ: float, QRS: float, QT: float, QTcFra: float):
         """
-        Create a fact and assign all values to their corresponding properties
+        Create a list of facts and assign all values to their corresponding properties
 
         This values must be carefully declared and must met a certain set of validations in
         order for the fact to be valid. Each property has a setter and an accessor in order

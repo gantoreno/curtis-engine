@@ -1,6 +1,6 @@
 import os
 import pickle
-from .fact import CurtisFact
+from .facts import CurtisFacts
 from .exceptions import CurtisIntegrityError
 
 
@@ -9,8 +9,8 @@ class CurtisEngine:
     The Curtis engine
 
     This class will act as the inference engine of an expert system, in which an initial
-    fact must be declared in order for curtis to run and perform a diagnosis. This fact
-    must be passed as a `CurtisFact` object, that contains automatic validation for each
+    facts lists must be declared in order for curtis to run and perform a diagnosis. This facts
+    must be passed as a `CurtisFacts` object, that contains automatic validation for each
     expected field.
     """
 
@@ -31,29 +31,29 @@ class CurtisEngine:
             raise CurtisIntegrityError(
                 "The curtis model file appears to be missing/corrupted")
 
-    def declare_fact(self, fact: CurtisFact):
+    def declare_facts(self, facts: CurtisFacts):
         """
-        Fact declaration
+        Facts declaration
 
-        To declare a fact, a `CurtisFact` must be passed in order for the engine
-        to store it, the `CurtisFact` automatically performs validation to each 
+        To declare a set of facts, a `CurtisFacts` object must be passed in order for the engine
+        to store it, the `CurtisFacts` object automatically performs validation to each 
         field, making sure no value is going to affect the decision/diagnosis.
 
         Parameters
         ----------
-        :param fact: The general fact containing a patient's ECG values
+        :param facts: The general facts that contain a patient's ECG values
 
         Returns
         -------
         :return: None
         """
-        self.fact = fact
+        self.facts = facts
 
     def diagnose(self):
         """
         Perform a diagnostic.
 
-        After a fact is declared, the engine now performs a diagnostic over the
+        After facts are declared, the engine now performs a diagnostic over the
         provided values, which get passed to the inner's decision-making module
         and returns a diagnostic index. The returned diagnostic index must be
         passed to the `utils.encoding.diagnosis_indexes` dictionary as a key
@@ -65,16 +65,16 @@ class CurtisEngine:
         """
         diagnosis = self.engine.predict([
             [
-                self.fact.sex,
-                self.fact.age,
-                self.fact.height,
-                self.fact.weight,
-                self.fact.HR,
-                self.fact.Pd,
-                self.fact.PQ,
-                self.fact.QRS,
-                self.fact.QT,
-                self.fact.QTcFra
+                self.facts.sex,
+                self.facts.age,
+                self.facts.height,
+                self.facts.weight,
+                self.facts.HR,
+                self.facts.Pd,
+                self.facts.PQ,
+                self.facts.QRS,
+                self.facts.QT,
+                self.facts.QTcFra
             ]
         ])
 

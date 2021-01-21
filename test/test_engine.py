@@ -1,6 +1,6 @@
 import pandas as pd
 
-from curtis.fact import CurtisFact
+from curtis.facts import CurtisFacts
 from curtis.engine import CurtisEngine
 from curtis.utils.encoding import diagnosis_indexes
 
@@ -12,10 +12,10 @@ def test_creates_engine_instance():
     assert isinstance(curtis, CurtisEngine)
 
 
-def test_declares_fact():
+def test_declares_facts():
     """ Should correctly declare a fact. """
     curtis = CurtisEngine()
-    test_fact = CurtisFact(
+    test_facts = CurtisFacts(
         sex=1,
         age=89,
         height=140,
@@ -28,9 +28,9 @@ def test_declares_fact():
         QTcFra=451
     )
 
-    curtis.declare_fact(test_fact)
+    curtis.declare_facts(test_facts)
 
-    assert curtis.fact == test_fact
+    assert curtis.facts == test_facts
 
 
 def test_predicts_correctly():
@@ -41,7 +41,7 @@ def test_predicts_correctly():
     test_df = test_df.drop(['diagnosis'], axis='columns')
 
     for patient in test_df.iloc:
-        test_fact = CurtisFact(
+        test_facts = CurtisFacts(
             sex=patient['sex'],
             age=patient['age'],
             height=patient['height'],
@@ -54,7 +54,7 @@ def test_predicts_correctly():
             QTcFra=patient['QTcFra']
         )
 
-        curtis.declare_fact(test_fact)
+        curtis.declare_facts(test_facts)
 
         diagnosis_predicted = curtis.diagnose()
         diagnosis_expected = patient['diagnosis_index']
