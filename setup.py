@@ -9,7 +9,7 @@ setup(
     version=version,
     author='Gabriel Moreno',
     author_email='gantoreno@gmail.com',
-    description="The cardiovascular, unified, real-time intelligent system",
+    description="The cardiovascular unified real-time intelligent system",
     long_description=long_description,
     long_description_content_type="text/markdown",
     classifiers=[
