@@ -1,4 +1,4 @@
-# Curtis: The Cardiovascular Unified Real-Time Intelligent System
+# Curtis: The cardiovascular unified real-time intelligent system
 
 ![Python package](https://github.com/gantoreno/curtis-engine/workflows/Python%20package/badge.svg) ![Python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue) ![Upload Python Package](https://github.com/gantoreno/curtis-engine/workflows/Upload%20Python%20Package/badge.svg) ![PyPi](https://shields.io/pypi/v/curtis-engine.svg)
 
