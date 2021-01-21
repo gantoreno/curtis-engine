@@ -38,7 +38,6 @@ After that, use `curtis.declare_fact` method to declare a new `CurtisFact` objec
 ...         QTcFra=451
 ...     )
 ... )
-...
 ```
 
 Finally, to get a diagnosis over the declared fact, use the `curtis.diagnose` method:
