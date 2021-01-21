@@ -14,7 +14,7 @@ the data into branches of rules and decisions.
 __version__ = '0.2.0'
 
 try:
-    from .fact import CurtisFact
+    from .facts import CurtisFacts
     from .engine import CurtisEngine
     from .exceptions import exceptions
     from .utils import utils
