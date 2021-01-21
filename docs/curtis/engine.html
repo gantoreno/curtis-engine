@@ -26,15 +26,15 @@
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">import pickle
-from sklearn.tree import DecisionTreeClassifier
+<pre><code class="python">import os
+import pickle
 from .fact import CurtisFact
 from .exceptions import CurtisIntegrityError
 
 
 class CurtisEngine:
     &#34;&#34;&#34;
-    The CURTIS engine
+    The Curtis engine
 
     This class will act as the inference engine of an expert system, in which an initial
     fact must be declared in order for curtis to run and perform a diagnosis. This fact
@@ -50,8 +50,10 @@ class CurtisEngine:
         loaded and placed into the `engine` variable, it is necessary since 
         all classification tasks are performed by the engine.
         &#34;&#34;&#34;
+        here = os.path.dirname(os.path.abspath(__file__))
+
         try:
-            with open(&#39;curtis/model/curtis.sav&#39;, &#39;rb&#39;) as f:
+            with open(os.path.join(here, &#34;model&#34;, &#34;curtis.sav&#34;), &#34;rb&#34;) as f:
                 self.engine = pickle.load(f)
         except:
             raise CurtisIntegrityError(
@@ -120,7 +122,7 @@ class CurtisEngine:
 <span>class <span class="ident">CurtisEngine</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>The CURTIS engine</p>
+<div class="desc"><p>The Curtis engine</p>
 <p>This class will act as the inference engine of an expert system, in which an initial
 fact must be declared in order for curtis to run and perform a diagnosis. This fact
 must be passed as a <code>CurtisFact</code> object, that contains automatic validation for each
@@ -135,7 +137,7 @@ all classification tasks are performed by the engine.</p></div>
 </summary>
 <pre><code class="python">class CurtisEngine:
     &#34;&#34;&#34;
-    The CURTIS engine
+    The Curtis engine
 
     This class will act as the inference engine of an expert system, in which an initial
     fact must be declared in order for curtis to run and perform a diagnosis. This fact
@@ -151,8 +153,10 @@ all classification tasks are performed by the engine.</p></div>
         loaded and placed into the `engine` variable, it is necessary since 
         all classification tasks are performed by the engine.
         &#34;&#34;&#34;
+        here = os.path.dirname(os.path.abspath(__file__))
+
         try:
-            with open(&#39;curtis/model/curtis.sav&#39;, &#39;rb&#39;) as f:
+            with open(os.path.join(here, &#34;model&#34;, &#34;curtis.sav&#34;), &#34;rb&#34;) as f:
                 self.engine = pickle.load(f)
         except:
             raise CurtisIntegrityError(
