@@ -16,18 +16,18 @@ First, install the `curtis-engine` package:
 $ pip install curtis-engine
 ```
 
-To start using Curtis, the `CurtisEngine` class must be imported, as well as `CurtisFact` for the fact declaration:
+To start using Curtis, the `CurtisEngine` class must be imported, as well as `CurtisFacts` for the facts declaration:
 
 ```python
->>> from curtis import CurtisEngine, CurtisFact
+>>> from curtis import CurtisEngine, CurtisFacts
 >>> curtis = CurtisEngine()
 ```
 
-After that, use `curtis.declare_fact` method to declare a new `CurtisFact` object, which should contain all the ECG values needed for a diagnosis to be performed:
+After that, use `curtis.declare_facts` method to declare a new `CurtisFacts` object, which should contain all the ECG values needed for a diagnosis to be performed:
 
 ```python
->>> curtis.declare_fact(
-...    CurtisFact(
+>>> curtis.declare_facts(
+...    CurtisFacts(
 ...         sex=1,
 ...         age=89,
 ...         height=140,
