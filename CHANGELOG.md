@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 -   Replace 'fact' with 'facts'.
 
+### Removed
+
+-   Remove install_requires section from setup.py.
+
 ### Fixed
 
 -   Bug fixes and improvements.
