@@ -69,7 +69,7 @@ Using [`serve`](https://www.npmjs.com/package/serve):
 ```sh
 $ git clone github.com/gantoreno/curtis-engine.git
 $ cd curtis-engine
-$ serve docs
+$ serve docs/curtis
 ```
 
 The documentation should now be available at [http://localhost:5000](http://localhost:5000).
