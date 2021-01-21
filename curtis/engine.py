@@ -1,7 +1,5 @@
 import os
 import pickle
-import pkgutil
-from sklearn.tree import DecisionTreeClassifier
 from .fact import CurtisFact
 from .exceptions import CurtisIntegrityError
 
