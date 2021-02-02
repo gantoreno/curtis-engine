@@ -4,7 +4,7 @@
 
 # Curtis - The engine
 
-![Python package](https://github.com/gantoreno/curtis-engine/workflows/Python%20package/badge.svg) ![Python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue) ![Upload Python Package](https://github.com/gantoreno/curtis-engine/workflows/Upload%20Python%20Package/badge.svg) ![PyPi](https://shields.io/pypi/v/curtis-engine.svg)
+![Python package](https://github.com/gantoreno/curtis-engine/workflows/Python%20package/badge.svg) ![Upload Python Package](https://github.com/gantoreno/curtis-engine/workflows/Upload%20Python%20Package/badge.svg) ![Python](https://img.shields.io/badge/python-3.6%20%7C%203.7%20%7C%203.8-blue) ![PyPi](https://shields.io/pypi/v/curtis-engine.svg) ![License](https://img.shields.io/github/license/gantoreno/curtis-engine)
 
 The cardiovascular unified real-time intelligent system is an AI-based engine whose purpose is to analyze the cardiovascular health of a given person, this is done through ECG analysis (an existent ECG measuring system is needed to obtain the required values).
 
