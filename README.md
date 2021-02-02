@@ -80,4 +80,4 @@ The documentation should now be available at [http://localhost:5000](http://loca
 
 ## License
 
-This project is licensed under the [Python Packaging Authority](https://www.pypa.io/en/latest/) license.
+This project is licensed under the [GNU GPLv3](https://www.gnu.org/licenses/gpl-3.0.html) license.
